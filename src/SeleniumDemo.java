@@ -9,8 +9,7 @@ public class SeleniumDemo {
         // how to open a browser
 
        System.setProperty("webdriver.chrome.driver","Drivers\\chromedriver.exe");
-
-        WebDriver driver = new ChromeDriver();
+       WebDriver driver = new ChromeDriver();
 
 
         /*System.setProperty("webdriver.gecko.driver","Drivers\\geckodriver.exe");
