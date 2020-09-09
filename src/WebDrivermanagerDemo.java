@@ -9,8 +9,8 @@ public class WebDrivermanagerDemo {
 
     public static void main(String[] args) {
 
-        /*WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();*/
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
 
        /* WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
@@ -21,8 +21,8 @@ public class WebDrivermanagerDemo {
 
       //  for edge browser
 
-        WebDriverManager.edgedriver().setup();
-        WebDriver driver = new EdgeDriver();
+        /*WebDriverManager.edgedriver().setup();
+        WebDriver driver = new EdgeDriver();*/
 
         driver.get("http://demo.guru99.com/v4");
 
