@@ -24,6 +24,11 @@ public class LogindemoXpath {
 
         WebElement btnSubmit = driver.findElement(By.xpath("//input[@type='submit']"));
         btnSubmit.click();
+//------------------------------------------
 
-    }
+
+        //---invalid-----
+
+        //-- blank---
+            }
 }
