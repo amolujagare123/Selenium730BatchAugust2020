@@ -1,15 +1,34 @@
 <suite name="my project name">
 
+    <groups>
+        <run>
+            <include name="email"/>
+        </run>
+    </groups>
+
+
     <test name="Module name 1">
         <classes>
-            <class name="TestNGDemo.suiteDemo.ClassOne"/>
+            <class name="TestNGDemo.suiteDemo.ClassOne">
+                <!--<methods>
+                     <include name="classOneTest2"/>
+                </methods>-->
+            </class>
+
             <class name="TestNGDemo.suiteDemo.ClassTwo"/>
         </classes>
     </test>
 
     <test name="Module name 2">
         <classes>
-            <class name="TestNGDemo.suiteDemo.ClassThree"/>
+            <class name="TestNGDemo.suiteDemo.ClassThree">
+
+                    <!--<methods>
+                        <exclude name="classThreeTest3"/>
+                        <exclude name="classThreeTest2"/>
+                    </methods>-->
+
+            </class>
         </classes>
     </test>
 
