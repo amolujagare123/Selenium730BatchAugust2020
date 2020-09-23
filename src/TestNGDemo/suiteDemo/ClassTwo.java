@@ -1,5 +1,6 @@
 package TestNGDemo.suiteDemo;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class ClassTwo {
@@ -15,10 +16,15 @@ public class ClassTwo {
     {
         System.out.println("classTwoTest2");
     }
-
+    @Parameters({"url","os"})
     @Test
-    public void classTwoTest3()
+    public void classTwoTest3(String myUrl,String myOs)
     {
         System.out.println("classTwoTest3");
+
+        String url = myUrl;
+
+        System.out.println("Opening:"+url);
+        System.out.println("Operating System:"+myOs);
     }
 }

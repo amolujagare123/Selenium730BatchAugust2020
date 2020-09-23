@@ -1,0 +1,19 @@
+<suite name="my project name">
+
+    <parameter name="url" value="http://gmail.com"/>
+        <parameter name ="os" value="Linux"/>
+
+    <test name="Module name 1">
+        <classes>
+            <class name="TestNGDemo.suiteDemo.ClassOne"/>
+            <class name="TestNGDemo.suiteDemo.ClassTwo"/>
+        </classes>
+    </test>
+
+    <test name="Module name 2">
+        <classes>
+            <class name="TestNGDemo.suiteDemo.ClassThree"/>
+        </classes>
+    </test>
+
+</suite>

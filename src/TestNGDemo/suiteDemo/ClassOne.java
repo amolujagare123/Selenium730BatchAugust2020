@@ -2,6 +2,7 @@ package TestNGDemo.suiteDemo;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class ClassOne {
@@ -31,10 +32,17 @@ public class ClassOne {
         System.out.println("classOneTest2");
     }
 
+    @Parameters({"url","os"})
     @Test
-    public void classOneTest3()
+    public void classOneTest3(String myUrl,String myOs)
     {
         System.out.println("classOneTest3");
+
+        String url = myUrl;
+
+        System.out.println("Opening:"+url);
+        System.out.println("Operating System:"+myOs);
+
     }
 
 
