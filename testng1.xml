@@ -1,5 +1,13 @@
 <suite name="my project name">
 
+    <listeners>
+     <!--   <listener class-name="org.testng.reporters.EmailableReporter2" />-->
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+
+    </listeners>
+
+
     <parameter name="url" value="http://gmail.com"/>
         <parameter name ="os" value="Linux"/>
 

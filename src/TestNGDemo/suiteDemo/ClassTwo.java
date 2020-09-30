@@ -1,5 +1,6 @@
 package TestNGDemo.suiteDemo;
 
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -9,6 +10,12 @@ public class ClassTwo {
     public void classTwoTest1()
     {
         System.out.println("classTwoTest1");
+
+        String expected = "string1";
+        String actual = "string2";
+
+        Assert.assertEquals(actual,expected,"strings are not equal");
+
     }
 
     @Test (groups = "email")
