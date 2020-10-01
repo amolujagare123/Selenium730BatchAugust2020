@@ -9,8 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import static ExtentReportsDemo.util.Myscreenshot.takescreenshot;
 
 public class Logintest {
 
@@ -67,12 +73,26 @@ public class Logintest {
 
         test.info("login button is clicked");
 
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        String expected = "http://stock.scriptinglogic.net/dashboard.php";
+
+        String actual = driver.getCurrentUrl();
+
+        try{
+            Assert.assertEquals(actual,expected,"actual url is different");
+            test.pass("test is passed");
+        }
+        catch (AssertionError e)
+        {
+            test.fail(e.getMessage());
+        }
+
         extent.flush();
     }
 
     @Test
-    public void myloginTest002()
-    {
+    public void myloginTest002() throws IOException {
         ExtentTest test = extent.createTest("myloginTest002");
 
         WebDriverManager.chromedriver().setup();
@@ -103,6 +123,23 @@ public class Logintest {
 
         test.info("login button is clicked");
 
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        String expected = "http://stock.scriptinglogic.net/index.php?msg=Wrong%20Username%20or%20Password&type=error";
+
+        String actual = driver.getCurrentUrl();
+
+        try{
+            Assert.assertEquals(actual,expected,"actual url is different");
+            test.pass("test is passed");
+        }
+        catch (AssertionError e)
+        {
+            test.fail(e.getMessage());
+            test.addScreenCaptureFromPath("./screenshots/"+takescreenshot(driver));
+        }
+
+
         extent.flush();
     }
 
@@ -125,12 +162,12 @@ public class Logintest {
         test.info("url is opened");
 
         WebElement txtUsername = driver.findElement(By.xpath("//input[@id='login-username']"));
-        txtUsername.sendKeys("admin");
+        txtUsername.sendKeys("");
 
         test.info("username is entered");
 
         WebElement txtPassword = driver.findElement(By.xpath("//input[@type='password']"));
-        txtPassword.sendKeys("admin");
+        txtPassword.sendKeys("");
 
         test.info("password is entered");
 
@@ -138,6 +175,21 @@ public class Logintest {
         btnSubmit.click();
 
         test.info("login button is clicked");
+
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+        String expected = "http://stock.scriptinglogic.net/";
+
+        String actual = driver.getCurrentUrl();
+
+        try{
+            Assert.assertEquals(actual,expected,"actual url is different");
+            test.pass("test is passed");
+        }
+        catch (AssertionError e)
+        {
+            test.fail(e.getMessage());
+        }
 
         extent.flush();
     }
